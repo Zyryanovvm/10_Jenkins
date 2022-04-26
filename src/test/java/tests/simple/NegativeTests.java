@@ -7,23 +7,23 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class NegativeTests {
 
     @Test
-    void test01() {
+    void test07() {
         assertTrue(false);
     }
     @Test
-    void test02() {
+    void test08() {
         assertTrue(false);
     }
     @Test
-    void test03() {
+    void test09() {
         assertTrue(false);
     }
     @Test
-    void test04() {
+    void test10() {
         assertTrue(false);
     }
     @Test
-    void test05() {
+    void test11() {
         assertTrue(false);
     }
 }

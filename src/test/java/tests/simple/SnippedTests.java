@@ -8,27 +8,25 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class SnippedTests {
     @Test
     @Disabled
-    void test01() {
+    void test12() {
+        assertTrue(false);
+    }
+    @Test
+    void test13() {
+        assertTrue(true);
+    }
+    @Test
+    @Disabled
+    void test14() {
+        assertTrue(false);
+    }
+    @Test
+    void test15() {
         assertTrue(false);
     }
     @Test
     @Disabled
-    void test02() {
-        assertTrue(false);
-    }
-    @Test
-    @Disabled
-    void test03() {
-        assertTrue(false);
-    }
-    @Test
-    @Disabled
-    void test04() {
-        assertTrue(false);
-    }
-    @Test
-    @Disabled
-    void test05() {
+    void test16() {
         assertTrue(false);
     }
 }
