@@ -5,6 +5,7 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.javafaker.Faker;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.demoqa.pages.RegistrationFormPage;
 import tests.demoqa.utils.RandomUtils;
@@ -14,6 +15,7 @@ import java.util.Locale;
 import static io.qameta.allure.Allure.step;
 import static java.lang.String.format;
 
+@Tag("demoqa")
 public class RegistrationFormTest<IdeaProjects, QA, resources> {
 
     Faker fakerRu = new Faker(new Locale("ru"));
@@ -42,12 +44,6 @@ public class RegistrationFormTest<IdeaProjects, QA, resources> {
 
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
-    @BeforeAll
-    public static void settings() {
-        Configuration.holdBrowserOpen = true;
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1600x800";
-    }
 
     @Test
     void fillFormTest() {
