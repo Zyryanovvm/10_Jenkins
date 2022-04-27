@@ -3,6 +3,7 @@ package tests.simple;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SnippedTests {
@@ -18,15 +19,16 @@ public class SnippedTests {
     @Test
     @Disabled
     void test14() {
-        assertTrue(false);
+        assertTrue(true);
     }
     @Test
     void test15() {
-        assertTrue(false);
+        assertTrue(true);
     }
     @Test
     @Disabled
     void test16() {
-        assertTrue(false);
+        assertFalse(false);
+
     }
 }
