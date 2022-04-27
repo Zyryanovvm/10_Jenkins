@@ -16,7 +16,7 @@ import static java.lang.String.format;
 
 @DisplayName("RegistrationFormTest тест")
 @Tag("RegistrationFormTest")
-public class RegistrationFormTest<IdeaProjects, QA, resources> extends TestBase {
+public class RegistrationFormTest extends TestBase {
 
     Faker fakerRu = new Faker(new Locale("ru"));
 
@@ -42,8 +42,6 @@ public class RegistrationFormTest<IdeaProjects, QA, resources> extends TestBase 
             myStateAndCity = format("%s %s", myState, myCity);
 
 
-    RegistrationFormPage registrationFormPage = new RegistrationFormPage();
-
 
     @DisplayName("Тест на форму регистрации demoqa")
     @Test
@@ -55,21 +53,43 @@ public class RegistrationFormTest<IdeaProjects, QA, resources> extends TestBase 
             registrationFormPage.openPage();
         });
 
-        step("Заполняем таблицу", () -> {
-                    registrationFormPage.setFirstName(firstName)
-                            .setLastName(lastName)
-                            .setEmail(email)
-                            .setGender(myGender)
-                            .setNumberPhone(phoneNumber)
-                            .setBirthDay(bithDay, bithMonth, bithYear)
-                            .setSubject(mySubject)
-                            .setHobbies(myHobbies)
-                            .setUploadPicture(file)
-                            .setCurrentAddress(currentAddress)
-                            .setMyState(myState)
-                            .setMyCity(myState, myCity)
-                            .clickSubmit();
-                });
+        step("Вводим Имя и фамилию", () -> {
+            registrationFormPage.setFirstName(firstName)
+                    .setLastName(lastName);
+        });
+        step("Вводим email", () -> {
+            registrationFormPage.setEmail(email);
+        });
+        step("Вводим Gender", () -> {
+            registrationFormPage.setGender(myGender);
+        });
+        step("Вводим номер телефона", () -> {
+            registrationFormPage.setNumberPhone(phoneNumber);
+        });
+        step("Заполняем дату рождения", () -> {
+            registrationFormPage.setBirthDay(bithDay, bithMonth, bithYear);
+        });
+        step("Вводим mySubject", () -> {
+            registrationFormPage.setSubject(mySubject);
+        });
+        step("Вводим Хобби", () -> {
+            registrationFormPage.setHobbies(myHobbies);
+        });
+        step("Подгружаем картинку", () -> {
+            registrationFormPage.setUploadPicture(file);
+        });
+        step("Вводим адрес", () -> {
+            registrationFormPage.setCurrentAddress(currentAddress);
+        });
+        step("Выбираем штат", () -> {
+            registrationFormPage.setMyState(myState);
+        });
+        step("Выбираем город", () -> {
+            registrationFormPage.setMyCity(myState, myCity);
+        });
+        step("Кликаем Готово", () -> {
+            registrationFormPage.clickSubmit();
+        });
 
         step("Выполняем проверки корректности заполнения ячеек", () -> {
             registrationFormPage.checkResult("Student Name", fullName)
