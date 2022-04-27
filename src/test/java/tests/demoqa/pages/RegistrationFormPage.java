@@ -37,7 +37,7 @@ public class RegistrationFormPage {
 
     //actions
     public RegistrationFormPage openPage() {
-        open("https://demoqa.com/automation-practice-form");
+        open("/automation-practice-form");
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
         Selenide.zoom(1);

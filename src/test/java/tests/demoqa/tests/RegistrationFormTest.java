@@ -1,10 +1,9 @@
 package tests.demoqa.tests;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.javafaker.Faker;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.demoqa.pages.RegistrationFormPage;
@@ -15,8 +14,9 @@ import java.util.Locale;
 import static io.qameta.allure.Allure.step;
 import static java.lang.String.format;
 
-@Tag("demoqa")
-public class RegistrationFormTest<IdeaProjects, QA, resources> {
+@DisplayName("RegistrationFormTest тест")
+@Tag("RegistrationFormTest")
+public class RegistrationFormTest<IdeaProjects, QA, resources> extends TestBase {
 
     Faker fakerRu = new Faker(new Locale("ru"));
 
@@ -45,6 +45,7 @@ public class RegistrationFormTest<IdeaProjects, QA, resources> {
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
 
 
+    @DisplayName("Тест на форму регистрации demoqa")
     @Test
     void fillFormTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
