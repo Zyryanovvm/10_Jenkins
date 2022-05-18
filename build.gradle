@@ -46,6 +46,7 @@ tasks.withType(JavaCompile) {
 }
 
 tasks.withType(Test) {
+    systemProperties(System.getProperties()) // Позволяет передавать контект внутрь проекта
     useJUnitPlatform()
 
     testLogging {
@@ -60,5 +61,10 @@ task demoqa_tests(type: Test) {
     useJUnitPlatform{
         includeTags "RegistrationFormTest"
 //        excludeTags "simple"
+    }
+}
+task test5(type: Test) {
+    useJUnitPlatform{
+        includeTags "test5"
     }
 }
