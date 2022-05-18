@@ -21,10 +21,25 @@ public class RegistrationFormTest extends TestBase {
     Faker fakerRu = new Faker(new Locale("ru"));
 
     // My Details
-    String firstName = RandomUtils.getRandomStringName(), lastName = fakerRu.name().lastName(), email = RandomUtils.getRandomEmail(), phoneNumber = RandomUtils.getRandomPhoneNumbers(), currentAddress = fakerRu.address().fullAddress(), myGender = "Other", bithDay = "15", bithMonth = "January", bithYear = "1995", mySubject = "English", myHobbies = "Music", myState = "Haryana", myCity = "Panipat", file = "1.PNG";
+    String firstName = RandomUtils.getRandomStringName(),
+            lastName = fakerRu.name().lastName(),
+            email = RandomUtils.getRandomEmail(),
+            phoneNumber = RandomUtils.getRandomPhoneNumbers(),
+            currentAddress = fakerRu.address().fullAddress(),
+            myGender = "Other",
+            bithDay = "15",
+            bithMonth = "January",
+            bithYear = "1995",
+            mySubject = "English",
+            myHobbies = "Music",
+            myState = "Haryana",
+            myCity = "Panipat",
+            file = "1.PNG";
 
     // My verification details
-    String fullName = format("%s %s", firstName, lastName), fullBithDate = format("%s %s,%s", bithDay, bithMonth, bithYear), myStateAndCity = format("%s %s", myState, myCity);
+    String fullName = format("%s %s", firstName, lastName),
+            fullBithDate = format("%s %s,%s", bithDay, bithMonth, bithYear),
+            myStateAndCity = format("%s %s", myState, myCity);
 
 
     @DisplayName("Тест на форму регистрации demoqa")
@@ -77,6 +92,7 @@ public class RegistrationFormTest extends TestBase {
         step("Выполняем проверки корректности заполнения ячеек", () -> {
             registrationFormPage.checkResult("Student Name", fullName).checkResult("Student Email", email).checkResult("Gender", myGender).checkResult("Mobile", phoneNumber).checkResult("Date of Birth", fullBithDate).checkResult("Subjects", mySubject).checkResult("Hobbies", myHobbies).checkResult("Picture", file).checkResult("Address", currentAddress).checkResult("State and City", myStateAndCity).closeTable();
         });
+        System.out.println("Тест пройдет успешно");
 
     }
 }
