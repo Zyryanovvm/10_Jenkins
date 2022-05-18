@@ -68,3 +68,8 @@ task test5(type: Test) {
         includeTags "test5"
     }
 }
+task systemTests(type: Test) {
+    useJUnitPlatform{
+        includeTags "systemTests"
+    }
+}

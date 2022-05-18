@@ -3,7 +3,9 @@ package tests.demoqa.properties;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+@Tag("systemTests")
 public class SystemPropertiesTest {
+
     @Test
     void someTest1() {
         String browser = System.getProperty("browser");
@@ -38,5 +40,10 @@ public class SystemPropertiesTest {
         System.out.println(version);
         System.out.println(browserSize);
         // gradle clean test5 -Dbrowser=opera -Dversion=99 -DbrowserSize=300x300
+    }
+
+    @Test
+    void someTest6() {
+        System.out.println("I want to say: " + System.getProperty("message"));
     }
 }
