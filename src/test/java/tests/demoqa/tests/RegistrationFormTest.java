@@ -3,6 +3,7 @@ package tests.demoqa.tests;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.github.javafaker.Faker;
 import io.qameta.allure.AllureId;
+import io.qameta.allure.Owner;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -46,6 +47,7 @@ public class RegistrationFormTest extends TestBase {
     @DisplayName("Тест на форму регистрации demoqa")
     @Test
     @AllureId("11177")
+    @Owner("allure8")
     void fillFormTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         RegistrationFormPage registrationFormPage = new RegistrationFormPage();
