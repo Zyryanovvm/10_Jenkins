@@ -45,7 +45,7 @@ public class RegistrationFormTest extends TestBase {
 
     @DisplayName("Тест на форму регистрации demoqa")
     @Test
-    @AllureId("11176")
+    @AllureId("11177")
     void fillFormTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         RegistrationFormPage registrationFormPage = new RegistrationFormPage();
