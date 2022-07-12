@@ -97,5 +97,5 @@ public class RegistrationFormTest extends TestBase {
         System.out.println("Тест пройдет успешно");
 
     }
-    
+
 }
